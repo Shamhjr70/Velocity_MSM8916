@@ -153,7 +153,7 @@ struct zpool *zpool_create_pool(char *type, gfp_t gfp, struct zpool_ops *ops)
 
 	if (!driver) {
 
-		request_module(type);
+		request_module("zpool-%s", type);
 
 		driver = zpool_get_driver(type);
 	}
